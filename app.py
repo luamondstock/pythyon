@@ -20,20 +20,32 @@ def finalizar_app():
     os.system('cls')
     print('Finalizando o app\n')
 
-def escolher_opcao():
-    opção_escolhida = int(input('Escolha uma opção: '))
-    # opção_escolhida = int(opção_escolhida)
+def opcao_invalida():
+    print('Opção invalida!\n')
+    input('Digite uma tecla para voltar ao menu principal')
+    main()
+    
 
-    if opção_escolhida == 1:
-        print('Cadastrar Restaurante')
-    elif opção_escolhida == 2:
-        print('Listar Restaurantes')
-    elif opção_escolhida == 3:
-        print('Ativar Restaurante')
-    else:
-        finalizar_app()
+
+
+def escolher_opcao():
+    try:
+        opção_escolhida = int(input('Escolha uma opção: '))
+        # opção_escolhida = int(opção_escolhida)
+
+        if opção_escolhida == 1:
+            print('Cadastrar Restaurante')
+        elif opção_escolhida == 2:
+            print('Listar Restaurantes')
+        elif opção_escolhida == 3:
+            print('Ativar Restaurante')
+        elif opção_escolhida == 4:
+            finalizar_app()
+        else:
+            opcao_invalida()
 
 def main():
+    os.system('cls')
     exibir_nome_do_programa()    
     exibir_opcoes()
     escolher_opcao()
@@ -41,11 +53,3 @@ def main():
 if __name__ == '__main__':
     main()
     
-
-
-
-
-
-
-
-
